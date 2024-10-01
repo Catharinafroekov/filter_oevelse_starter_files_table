@@ -12,6 +12,8 @@ const vehicles = [
 ];
 const tbodyPointer = document.querySelector("tbody");
 
+showTheseVehicles(vehicles);
+
 /* const allElectricArr = (vehicles.filter(isVehicleElectric));
 console.log(allElectricArr)
 
@@ -45,7 +47,7 @@ if(vehicle.ownedBy === 'Jonas' && vehicle.isElectric){
 }
 
 } */
-
+/* 
 const allPassengerArr = (vehicles.filter(Passenger));
 console.log(allPassengerArr)
 
@@ -55,7 +57,7 @@ function Passenger(vehicle){
 if(vehicle.passengers > 1 && vehicle.fuel === 'Rugbrød'){
   return true;
 }
-}
+} */
 
 
 function showTheseVehicles(arr) {
@@ -64,10 +66,13 @@ function showTheseVehicles(arr) {
   <td>${each.type}</td>
   <td>${each.fuel}</td>
   <td>${each.passengers}</td> 
-  <td>${each.stops}</td>
+  ${each.stops ? `<td>${each.stops}</td>`:`<td> - </td>`}
   <td>${each.ownedBy}</td>
-  <td>${each.isElectric}</td>
-  <td>${each.isTandem}</td>
+  ${each.isElectric ? `<td>${each.isElectric}</td>`:`<td> - </td>`}
+  ${each.isTandem ? `<td>${each.isTandem}</td>`:`<td> - </td>`}
+
 </tr>`;
   });
 }
+
+/* if(each.stops){'<td>${each.stops}</td>'}else{'<td>-</td>'} */
