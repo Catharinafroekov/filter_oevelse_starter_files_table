@@ -24,8 +24,8 @@ if(vehicle.isElectric){
   return true;
 }
 } */
-
-/* const allPassengerArr = (vehicles.filter(Passenger));
+/* 
+const allPassengerArr = (vehicles.filter(Passenger));
 console.log(allPassengerArr)
 
 showTheseVehicles(allPassengerArr);
@@ -44,11 +44,10 @@ showTheseVehicles(allElectricArr);
 function isVehicleElectric(vehicle){
 if(vehicle.ownedBy === 'Jonas' && vehicle.isElectric){
   return true;
-}
+}} */
 
-} */
-/* 
-const allPassengerArr = (vehicles.filter(Passenger));
+
+/* const allPassengerArr = (vehicles.filter(Passenger));
 console.log(allPassengerArr)
 
 showTheseVehicles(allPassengerArr);
@@ -58,6 +57,16 @@ if(vehicle.passengers > 1 && vehicle.fuel === 'Rugbrød'){
   return true;
 }
 } */
+
+const filters = {
+  isElectric: vehicles.filter((vehicle) => vehicle.passengers >2)
+};
+
+document.querySelector("#navigation").addEventListener("click", (event)=>{
+  const filterName = event.target.dataset.filter;
+  tbodyPointer.innerHTML = "";
+  showTheseVehicles(filters[filterName]);
+})
 
 
 function showTheseVehicles(arr) {
